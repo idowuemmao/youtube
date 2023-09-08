@@ -11,7 +11,7 @@ import { RiVideoLine } from "react-icons/ri";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar relative top-14">
+    <div className="sidebar ">
       <div className="icon-div">
         <BiSolidHomeAlt2 className="icon" />
         <h6 className="text">Home</h6>

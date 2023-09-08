@@ -12,7 +12,7 @@ const Header = () => {
     <div className="fixed flex justify-between p-2 px-7 w-full z-50 bg-[#0f0f0f] text-white items-center">
       {/* left */}
       <div className="flex items-center cursor-pointer">
-        <HiOutlineMenu className="text-3xl" />
+        <HiOutlineMenu className="text-3xl icon-right" />
         <Image
           src={youtube}
           alt="youtube-logo"
@@ -37,7 +37,7 @@ const Header = () => {
       <div className="flex items-center gap-8">
         <RiVideoAddLine className="icon-right" />
         <AiOutlineBell className="icon-right " />
-        <LuUserSquare className="bg-[#222222] rounded-full p-3 h-10 w-10 text-white cursor-pointer" />
+        <LuUserSquare className="bg-[#222222] icon-right" />
       </div>
     </div>
   );
