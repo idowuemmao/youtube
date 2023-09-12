@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="bg-[#0f0f0f] relative ">
       <Header />
-      <section className="flex relative top-14">
+      <section className="flex relative top-14 max-w-max">
         <Sidebar />
         <Filter />
       </section>

@@ -23,14 +23,14 @@ const Header = () => {
         <h1 className="font-extrabold text-lg">YouTube</h1>
       </div>
       {/* middle */}
-      <div className="flex items-center  pr-2 h-10">
+      <div className="flex items-center pr-2 max-h-10">
         <input
           type="text"
           placeholder="Search"
           name="search"
-          className="bg-[#0f0f0f] focus:outline-2 pl-4 focus:outline-blue-700 border border-r-0 border-gray-800 rounded-l-full h-full p-1 w-72"
+          className="bg-[#0f0f0f] focus:outline pl-4 focus:outline-blue-700 focus:border-none border border-r-0 border-gray-800 rounded-l-full h-10 p-1 w-72"
         />
-        <AiOutlineSearch className="bg-[#222222] object-contain h-full border border-gray-800 w-16 font-light rounded-r-full p-1 cursor-pointer" />
+        <AiOutlineSearch className="bg-[#222222] object-contain h-10 border border-gray-800 w-16 font-light rounded-r-full p-1 cursor-pointer" />
         <MdKeyboardVoice className="bg-[#222222] w-10 p-2 h-full ml-6 rounded-full cursor-pointer hover:bg-opacity-80" />
       </div>
       {/* right */}
