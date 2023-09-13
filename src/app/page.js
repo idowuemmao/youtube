@@ -10,10 +10,10 @@ export default function Home() {
     <div className="bg-[#0f0f0f] relative ">
       <Header />
       <section className="flex relative top-14 max-w-max">
+        <Main />
         <Sidebar />
         <Filter />
       </section>
-      <Main />
     </div>
   );
 }
