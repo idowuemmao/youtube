@@ -1,110 +1,45 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-"use client";
-import { useRef, useEffect } from "react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+// "use client";
 
 const Filter = () => {
   const list = [
-    "All",
-    "Gaming",
-    "Music",
-    "Mixes",
-    "React routers",
-    "Live",
-    "Marital Arts Movies",
-    "Belief",
-    "Superhero movies",
-    "JavaScript",
-    "Thrillers",
-    "Contemporary Worship Music",
-    "Lionel Messi",
-    "News",
-    "Speaking in tongues",
-    "Superheroes",
-    "Computers",
-    "Action Thrillers",
-    "Film Criticisms",
-    "Dramedy",
-    "Comedy",
-    "Presentations",
-    "Action-adventure games",
-    "Recently Uploaded",
-    "New to You",
+    { title: "All", id: 1 },
+    { title: "Gaming", id: 2 },
+    { title: "Music", id: 3 },
+    { title: "Mixes", id: 4 },
+    { title: "React routers", id: 5 },
+    { title: "Live", id: 6 },
+    { title: "Marital Arts Movies", id: 7 },
+    { title: "Belief", id: 8 },
+    { title: "Superhero movies", id: 9 },
+    { title: "JavaScript", id: 10 },
+    { title: "Thrillers", id: 11 },
+    { title: "Contemporary Worship Music", id: 12 },
+    { title: "Lionel Messi", id: 13 },
+    { title: "News", id: 14 },
+    { title: "Speaking in tongues", id: 15 },
+    { title: "Superheroes", id: 16 },
+    { title: "Computers", id: 17 },
+    { title: "Action Thrillers", id: 18 },
+    { title: "Film Criticisms", id: 19 },
+    { title: "Dramedy", id: 20 },
+    { title: "Comedy", id: 21 },
+    { title: "Presentations", id: 22 },
+    { title: "Action-adventure games", id: 23 },
+    { title: "Recently Uploaded", id: 24 },
+    { title: "New to You", id: 25 },
   ];
-  const listing = list.map((item) => {
-    return (
-      <div
-        key={item}
-        className="bg-[#222222] cursor-pointer p-2 hover:bg-[#333333] transition duration-200 ease-in-out h-fit min-w-max rounded-xl text-sm"
-      >
-        {item}
-      </div>
-    );
-  });
 
-  const tabMenuRef = useRef(null);
-  const btnLeftRef = useRef(null);
-  const btnRightRef = useRef(null);
-
-  const IconVisibility = () => {
-    let scrollLeftValue = Math.ceil(tabMenuRef.current.scrollLeft);
-    let scrollableWidth = Math.ceil(
-      tabMenuRef.current.scrollWidth - tabMenuRef.current.clientWidth
-    );
-    btnLeftRef.current.style.display = scrollLeftValue > 0 ? "block" : "none";
-    btnRightRef.current.style.display =
-      scrollableWidth > scrollLeftValue ? "block" : "none";
-  };
-
-  const handleLeftClick = () => {
-    if (tabMenuRef.current) {
-      tabMenuRef.current.scrollLeft -= 200;
-    }
-    IconVisibility();
-  };
-
-  const handleRightClick = () => {
-    if (tabMenuRef.current) {
-      tabMenuRef.current.scrollLeft += 200;
-    }
-    IconVisibility();
-  };
-  useEffect(() => {
-    IconVisibility(); // Initial check
-
-    if (tabMenuRef.current) {
-      tabMenuRef.current.addEventListener("scroll", IconVisibility);
-    }
-
-    return () => {
-      if (tabMenuRef.current) {
-        tabMenuRef.current.removeEventListener("scroll", IconVisibility);
-      }
-    };
-  }, []);
+  const filterList = list.map(({ title, id }) => (
+    <p key={id} className="bg-[#222222] p-2 text-xs min-w-max rounded-lg">
+      {title}
+    </p>
+  ));
 
   return (
-    <div className="relative top-2 text-white flex gap-2 w-4/5 h-fit">
-      <button
-        ref={btnLeftRef}
-        onClick={handleLeftClick}
-        className=" hover:bg-[#333333] cursor-pointer p-2 rounded-lg transition duration-200 ease-in-out "
-      >
-        <AiOutlineLeft className="text-white  text-sm " />
-      </button>
-      <div
-        className="flex gap-3 overflow-scroll scrollbar-hide tabMenuRef transition duration-500 ease-in-out"
-        ref={tabMenuRef}
-      >
-        {listing}
+    <div className="text-white flex gap-2 w-11/12 h-fit">
+      <div className=" flex gap-2 overflow-auto scrollbar-hide p-2">
+        {filterList}
       </div>
-      <button
-        ref={btnRightRef}
-        onClick={handleRightClick}
-        className=" hover:bg-[#333333] cursor-pointer p-2 rounded-lg transition duration-200 ease-in-out "
-      >
-        <AiOutlineRight className="text-white  text-sm " />
-      </button>
     </div>
   );
 };

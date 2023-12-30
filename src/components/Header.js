@@ -9,7 +9,7 @@ import youtube from "../images/youtube.png";
 
 const Header = () => {
   return (
-    <div className="fixed flex justify-between p-2 px-7 w-full z-50 bg-[#0f0f0f] text-white items-center">
+    <div className="flex justify-between p-2 px-7 w-full z-50 bg-[#0f0f0f] text-white items-center">
       {/* left */}
       <div className="flex items-center cursor-pointer">
         <HiOutlineMenu className="text-3xl icon-right" />
@@ -18,7 +18,7 @@ const Header = () => {
           alt="youtube-logo"
           width={30}
           height={30}
-          className="ml-6"
+          className="pl-4"
         />
         <h1 className="font-extrabold text-lg">YouTube</h1>
       </div>
@@ -31,7 +31,7 @@ const Header = () => {
           className="bg-[#0f0f0f] focus:outline pl-4 focus:outline-blue-700 focus:border-none border border-r-0 border-gray-800 rounded-l-full h-10 p-1 w-72"
         />
         <AiOutlineSearch className="bg-[#222222] object-contain h-10 border border-gray-800 w-16 font-light rounded-r-full p-1 cursor-pointer" />
-        <MdKeyboardVoice className="bg-[#222222] w-10 p-2 h-full ml-6 rounded-full cursor-pointer hover:bg-opacity-80" />
+        <MdKeyboardVoice className="bg-[#222222] w-10 p-2 h-full pl-6 rounded-full cursor-pointer hover:bg-opacity-80" />
       </div>
       {/* right */}
       <div className="flex items-center gap-8">

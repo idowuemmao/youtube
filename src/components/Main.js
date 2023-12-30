@@ -1,15 +1,19 @@
 import React from "react";
 import VidData from "./VidData";
-import ReactPlayer from "react-player";
+import Image from "next/image";
+
 const Main = () => {
-  // console.log(VidData);
   const vidElement = VidData.map((vid) => {
-    <div key={vid.id} className=" text-white border-4 border-white">
-      <h2 className="text-white text-2xl">{vid.author}</h2>
-      {/* <ReactPlayer controls={true} url={vid.vid} width={200} height={500} /> */}
-    </div>;
+    return (
+      <div key={vid.id}>
+        <Image src={vid.vid} alt="img" className="w-44" />
+        <div>
+          
+        </div>
+      </div>
+    );
   });
-  return <div className="top-32 z-50">{vidElement}</div>;
+  return <div className="flex flex-wrap w-full gap-8">{vidElement}</div>;
 };
 
 export default Main;

@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Main from "@/components/Main";
-import Image from "next/image";
 import "../app/globals.css";
 import Sidebar from "@/components/Sidebar";
 import Filter from "@/components/Filter";
@@ -8,12 +7,16 @@ import Filter from "@/components/Filter";
 export default function Home() {
   return (
     <div className="bg-[#0f0f0f] relative ">
-      <Header />
-      <section className="flex relative top-14 max-w-max">
-        <Main />
+      <div className="sticky top-0 z-20">
+        <Header />
+      </div>
+      <div className="flex w-full">
         <Sidebar />
-        <Filter />
-      </section>
+        <div className="overflow-scroll scrollbar-hide flex flex-col items-center w-full">
+          <Filter />
+          <Main />
+        </div>
+      </div>
     </div>
   );
 }
